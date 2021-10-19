@@ -6,7 +6,7 @@
    flex-direction: column;
    justify-content: space-between;
    align-items: center; 
-   height: 100vh;
+   min-height: 100vh;
    background-color: #FF537C;
 }
 
@@ -18,8 +18,8 @@ a, a:hover{
 /*HEADER*/
 
 header{
+    padding-top: 20px;
     color: #ffff;
-    height: 20vh;
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -51,7 +51,6 @@ nav{
 /*CONTENT*/
 
 #content{
-    height: 70vh;
     width: 90%;
     display: flex;
     justify-content: space-around;
@@ -82,6 +81,5 @@ nav{
 /*FOOTER*/
 footer{
     color: #E2D9D9;
-    height: 10vh;
     text-align: center;
 }
