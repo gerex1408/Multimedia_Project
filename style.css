@@ -31,6 +31,7 @@ header{
     font-family: 'Pacifico', cursive;
     font-size: 4.5rem;
     flex: 1.5;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 nav{
     flex: 2;
@@ -47,6 +48,9 @@ nav{
     transform: scale(1.1);
     transition-duration: 350ms;
 }
+#hamburgerMenu{
+    display: none;
+}
 
 /*CONTENT*/
 
@@ -58,10 +62,12 @@ nav{
     flex-wrap: wrap;
 }
 
-.card{
+.homePageCard{
     border-radius: 20px;
     border:none;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 20rem;
+    margin: 30px;
 }
 .card:hover{
     transform: rotateY(360deg);
@@ -82,4 +88,36 @@ nav{
 footer{
     color: #E2D9D9;
     text-align: center;
+}
+
+/*MEDIA QUERYS*/
+@media (min-height: 800px){
+    header{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px){
+    #principalNav{
+        display: none;
+    }
+    header{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    #hamburgerMenu{
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+    }
+    #hamburgerMenu ul{
+        margin-top: 10px;
+    }
+    .nav-item:hover{
+        background-color:#333;
+        transform: scale(1.1);
+        transition-duration: 350ms;
+    }
 }
