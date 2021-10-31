@@ -54,38 +54,57 @@
             </div>
         </nav>
     </header>
-    <section id="homeContent">
-        <div class="card homePageCard">
-            <img class="card-img-top" src="images/homeMenShoe.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">MEN SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Nike, Adidas, Puma, Munich...</p>
+    <section id="shoesContent">
+        <form id="filterOptions">
+            <div class="form-group">
+                <select class="form-control" id="colorSelect">
+                    <option value="" selected disabled>COLOR</option>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Others</option>
+                </select>
             </div>
-        </div>
-        <div class="card homePageCard" >
-            <img class="card-img-top" src="images/homeWomenShoes.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">WOMEN SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Jordan, Nike, Adidas, Puma...</p>
+            <div class="form-group">
+                <select class="form-control" id="sizeSelect">
+                    <option value="" selected disabled>SIZE</option>
+                    <option>30-35</option>
+                    <option>36-40</option>
+                    <option>41-45</option>
+                    <option>46</option>
+                </select>
             </div>
-        </div>
-        <div class="card homePageCard" >
-            <img class="card-img-top" src="images/homeKidsShoes.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">KIDS SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Nike, Adidas, Puma, Munich...</p>
+            <div id="priceGroup" >
+                <h5>PRICE</h5>
+                <div id="range">
+                    <input type="number" class="form-control" id="priceFrom" placeholder="FROM" min="0">
+                    <input disabled type="number" class="form-control" id="priceTo" placeholder="TO">
+                </div>
+                
             </div>
-        </div>
+        </form>
+        <div id="shoesContainer">
 
+        </div>
+        
     </section>
     <footer>
         <p>Shoey©Copyright 2021</p>
         <p>Gerard Lozano Trias</p>
     </footer>
 
+    <script>
+        document.getElementById("priceFrom").onchange = function () {
+            var input = document.getElementById("priceTo");
+            input.setAttribute("min", this.value);
+            input.removeAttribute("disabled")
+        }
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>
