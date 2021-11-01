@@ -56,8 +56,8 @@
     </header>
     <section id="shoesContent">
         <form id="filterOptions">
-            <div class="form-group">
-                <select class="form-control" id="colorSelect">
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="colorSelect">
                     <option value="" selected disabled>COLOR</option>
                     <option>Black</option>
                     <option>White</option>
@@ -66,8 +66,8 @@
                     <option>Others</option>
                 </select>
             </div>
-            <div class="form-group">
-                <select class="form-control" id="sizeSelect">
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="sizeSelect">
                     <option value="" selected disabled>SIZE</option>
                     <option>30-35</option>
                     <option>36-40</option>
@@ -81,11 +81,116 @@
                     <input type="number" class="form-control" id="priceFrom" placeholder="FROM" min="0">
                     <input disabled type="number" class="form-control" id="priceTo" placeholder="TO">
                 </div>
-                
             </div>
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="styleSelect">
+                    <option value="" selected disabled>STYLE</option>
+                    <option>Casual</option>
+                    <option>Sport</option>
+                    <option>Elegant</option>
+                </select>
+            </div>
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="brandSelect">
+                    <option value="" selected disabled>BRAND</option>
+                    <option>NIKE</option>
+                    <option>ADIDAS</option>
+                    <option>PUMA</option>
+                    <option>JORDAN</option>
+                </select>
+            </div>
+            <button id="filterButton" type="button" class="btn btn-success">FILTER</button>
         </form>
         <div id="shoesContainer">
-
+            <div id="containerContent">
+                <h2>MEN</h2>
+                <div class="row">
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card col-lg-3 col-sm-12 shoeCard">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </section>

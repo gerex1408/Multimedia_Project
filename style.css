@@ -23,6 +23,7 @@ h2{
 
 header{
     padding-top: 20px;
+    min-height: 160px;
     color: #ffff;
     width: 90%;
     display: flex;
@@ -73,7 +74,7 @@ nav{
     width: 20rem;
     margin: 30px;
 }
-.card:hover{
+.homePageCard:hover{
     transform: rotateY(360deg);
     transition-duration: 1500ms;
 }
@@ -81,7 +82,7 @@ nav{
 .card-title{
     font-weight: bold;
 }
-.card-img-top{
+.cardImageHome{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 425px;
@@ -118,7 +119,7 @@ nav{
     margin-top: 30px;
     box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
 }
-#contactButton{
+#contactButton, #filterButton{
     margin-top: 30px;
     margin-bottom: 20px;
     width: 100px;
@@ -131,7 +132,6 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    height: 70vh; /*S'HA DE TREURE, ÉS NOMES PER EL DESENVOLUPAMENT*/
 }
 #filterOptions{
     background-color: #c4c4c4;
@@ -142,14 +142,22 @@ nav{
 }
 #shoesContainer{
     flex: 5;
+    display: flex;
+    justify-content: center;
 }
-.form-group{
+#containerContent{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 90%;
+}
+
+.filterGroup{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.form-control{
+.filterControl{
     width: 80%;
     margin-top: 20px;
 }
@@ -157,6 +165,8 @@ nav{
     width: 80%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 #range{
     display: flex;
@@ -166,8 +176,16 @@ nav{
 #priceFrom, #priceTo{
     width: 40%;
 }
-
-
+.row{
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shoeCard{
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
 /*FOOTER*/
 footer{
     color: #E2D9D9;
@@ -176,11 +194,6 @@ footer{
 }
 
 /*MEDIA QUERYS*/
-@media (min-height: 800px){
-    header{
-        margin-bottom: 20px;
-    }
-}
 
 @media (max-width: 600px){
     #principalNav{
