@@ -132,6 +132,7 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    min-height: 70vh;
 }
 #filterOptions{
     background-color: #c4c4c4;
@@ -182,10 +183,84 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
+
+
 .shoeCard{
     margin-right: 30px;
     margin-bottom: 30px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 40px -20px rgba(0,0,0,.4);
 }
+.mainInfo{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.shoeName{
+    font-weight: bold;
+}
+.shoe {
+    width: 300px;
+}
+.size{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-left:10px;
+}
+.label{
+    font-weight: bold;
+  color: #5f6668;
+  font-size: 1.25rem;
+  margin: 0;
+  width: 125px;
+}
+.sizes{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+.sizeNumber{
+margin-right: 24px;
+}
+.tags{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+    padding: 10px;
+}
+.cartButton{
+    padding: 16px 24px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Lato;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background: #051923;
+    color: white;
+    border: none;
+    flex:2;
+}
+.price{
+    flex:1;
+    margin: 0;
+    margin-right:10px;
+}
+
 /*FOOTER*/
 footer{
     color: #E2D9D9;
