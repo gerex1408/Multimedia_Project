@@ -211,6 +211,13 @@ nav{
 .shoe {
     width: 300px;
 }
+.imageDiv{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .size{
     display: flex;
     align-items: center;
@@ -219,10 +226,10 @@ nav{
 }
 .label{
     font-weight: bold;
-  color: #5f6668;
-  font-size: 1.25rem;
-  margin: 0;
-  width: 125px;
+    color: #5f6668;
+    font-size: 1.25rem;
+    margin: 0;
+    width: 60px;
 }
 .sizes{
     display: flex;
@@ -231,7 +238,7 @@ nav{
     padding: 0;
   }
 .sizeNumber{
-margin-right: 24px;
+    margin-right: 24px;
 }
 .tags{
     display:flex;
