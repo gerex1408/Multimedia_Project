@@ -15,6 +15,10 @@ function getFiltersValues(){
     brandFilter = document.getElementById("brandSelect").value;
 }
 
+function anarPagina(id){
+    alert(id)
+}
+
 function filterShoes(shoesArr){
     const shoesContainer = document.getElementById("shoesRow");
     shoesContainer.innerHTML=''
@@ -58,7 +62,7 @@ function filterShoes(shoesArr){
                                     <h4 class="shoeName">${shoe.name}</h4>
                                 </div>
                                 <div class="imageDiv">
-                                    <img class="shoe" src="./images/shoes/shoe${shoe.id}.jpg" alt="shoe image">
+                                    <img class="shoe" src="./images/shoes/shoe${shoe.id}.jpg" alt="shoe image" onclick="anarPagina(${shoe.id})">
                                 </div>
                                 <div class="size">
                                     <p class="label">Size:</p>
