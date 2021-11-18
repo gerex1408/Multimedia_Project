@@ -18,8 +18,8 @@
         <nav id="principalNav">
             <ul id="navLinks">
                 <li><a href="menSection.html">MEN</a></li>
-                <li><a href="#">WOMEN</a></li>
-                <li><a href="#">KIDS</a></li>
+                <li><a href="womenSection.html">WOMEN</a></li>
+                <li><a href="kidsSection.html">KIDS</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
                 <li>
                     <a href="#">
@@ -39,8 +39,8 @@
                 
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="menSection.html">MEN</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">WOMEN</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">KIDS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="womenSection.html">WOMEN</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kidsSection.html">KIDS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT US</a></li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
@@ -86,7 +86,6 @@
                     <option value="" selected disabled>STYLE</option>
                     <option>Casual</option>
                     <option>Sport</option>
-                    <option>Elegant</option>
                 </select>
             </div>
             <div class="form-group filterGroup">
@@ -99,12 +98,12 @@
                 </select>
             </div>
             <button id="filterButton" type="button" class="btn btn-success" onclick="menShoesLoad()">FILTER</button>
-            <button id="clearButton" type="button" class="btn btn-secondary" onclick="clearFilters()">CLEAR</button>
+            <button id="clearButton" type="button" class="btn btn-secondary" onclick="clearFilters(menShoes)">CLEAR</button>
         </form>
         <div id="shoesContainer">
             <div id="containerContent">
                 <h2>MEN</h2>
-                <div class="row" id="menShoesRow">
+                <div class="row" id="shoesRow">
                     
                 </div>
             </div>

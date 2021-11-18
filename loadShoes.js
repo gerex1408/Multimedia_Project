@@ -16,7 +16,7 @@ function getFiltersValues(){
 }
 
 function filterShoes(shoesArr){
-    const shoesContainer = document.getElementById("menShoesRow");
+    const shoesContainer = document.getElementById("shoesRow");
     shoesContainer.innerHTML=''
 
     let sizeArr=[]
@@ -50,14 +50,15 @@ function filterShoes(shoesArr){
                             <div class="shoeCard">
                                 <div class="mainInfo">
                                     ${
-                                        shoe.brand==='NIKE'?`<img class="logo" src="./images/nike.jpg" alt="logo"></img>`:
-                                        shoe.brand==="ADIDAS"?`<img class="logo" src="./images/adidas.jpg" alt="logo"></img>`:
-                                        shoe.brand==="PUMA"&&`<img class="logo" src="./images/puma.png" alt="logo"></img>`
+                                        shoe.brand==='NIKE'?`<img class="logo" src="./images/logos/nike.jpg" alt="logo"></img>`:
+                                        shoe.brand==="ADIDAS"?`<img class="logo" src="./images/logos/adidas.jpg" alt="logo"></img>`:
+                                        shoe.brand==="PUMA"?`<img class="logo" src="./images/logos/puma.png" alt="logo"></img>`:
+                                        shoe.brand==="JORDAN"&&`<img class="logo" src="./images/logos/jordan.jpg" alt="logo"></img>`
                                     }
-                                    <h3 class="shoeName">${shoe.name}</h3>
+                                    <h4 class="shoeName">${shoe.name}</h4>
                                 </div>
                                 <div class="imageDiv">
-                                    <img class="shoe" src="./images/shoe${shoe.id}.jpg" alt="shoe image">
+                                    <img class="shoe" src="./images/shoes/shoe${shoe.id}.jpg" alt="shoe image">
                                 </div>
                                 <div class="size">
                                     <p class="label">Size:</p>
@@ -76,14 +77,9 @@ function filterShoes(shoesArr){
             }
         }
     }
-    if(nShoes<3){
-        if(nShoes===0){
-            shoesContainer.innerHTML=`<p>NO SHOES MATCHING THIS FILTER</p>`
-        }
-        else shoesContainer.style.justifyContent='flex-start'
-    }
-    else{
-        shoesContainer.style.justifyContent='space-between'
+    
+    if(nShoes===0){
+        shoesContainer.innerHTML=`<p>NO SHOES MATCHING THIS FILTER</p>`
     }
 }
 
@@ -91,11 +87,19 @@ function menShoesLoad(){
     getFiltersValues()
     filterShoes(menShoes)
 }
+function womenShoesLoad(){
+    getFiltersValues()
+    filterShoes(womenShoes)
+}
+function kidsShoesLoad(){
+    getFiltersValues()
+    filterShoes(kidsShoes)
+}
 
-function clearFilters(){
+function clearFilters(shoes){
     for(let element of document.getElementsByClassName("form-control")){
         element.value='';
     }
     getFiltersValues()
-    filterShoes(menShoes)
+    filterShoes(shoes)
 }

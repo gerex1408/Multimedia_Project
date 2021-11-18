@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="style.css">
     <title>Shoey</title>
 </head>
-<body>
+<body onload="kidsShoesLoad()">
     <header>
         <h1 id="title"><a href="index.html">Shoey</a></h1>
         <nav id="principalNav">
             <ul id="navLinks">
                 <li><a href="menSection.html">MEN</a></li>
-                <li><a href="#">WOMEN</a></li>
-                <li><a href="#">KIDS</a></li>
+                <li><a href="womenSection.html">WOMEN</a></li>
+                <li><a href="kidsSection.html">KIDS</a></li>
                 <li><a href="contact.html">CONTACT US</a></li>
                 <li>
                     <a href="#">
@@ -39,8 +39,8 @@
                 
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="menSection.html">MEN</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">WOMEN</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="#">KIDS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="womenSection.html">WOMEN</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="kidsSection.html">KIDS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">CONTACT US</a></li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">
@@ -54,38 +54,81 @@
             </div>
         </nav>
     </header>
-    <section id="homeContent">
-        <div class="card homePageCard">
-            <img class="card-img-top cardImageHome" src="images/homeMenShoe.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">MEN SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Nike, Adidas, Puma, Jordan...</p>
+    <section id="shoesContent">
+        <form id="filterOptions">
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="colorSelect">
+                    <option value="" selected disabled>COLOR</option>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Others</option>
+                </select>
+            </div>
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="sizeSelect">
+                    <option value="" selected disabled>SIZE</option>
+                    <option>23-27</option>
+                    <option>28-32</option>
+                    <option>33-35</option>
+                </select>
+            </div>
+            <div id="priceGroup" >
+                <h5>PRICE</h5>
+                <div id="range">
+                    <input type="number" class="form-control" id="priceFrom" placeholder="FROM" min="0">
+                    <input disabled type="number" class="form-control" id="priceTo" placeholder="TO">
+                </div>
+            </div>
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="styleSelect">
+                    <option value="" selected disabled>STYLE</option>
+                    <option>Casual</option>
+                    <option>Sport</option>
+                </select>
+            </div>
+            <div class="form-group filterGroup">
+                <select class="form-control filterControl" id="brandSelect">
+                    <option value="" selected disabled>BRAND</option>
+                    <option>NIKE</option>
+                    <option>ADIDAS</option>
+                    <option>PUMA</option>
+                    <option>MUNICH</option>
+                    <option>JORDAN</option>
+                </select>
+            </div>
+            <button id="filterButton" type="button" class="btn btn-success" onclick="kidsShoesLoad()">FILTER</button>
+            <button id="clearButton" type="button" class="btn btn-secondary" onclick="clearFilters(kidsShoes)">CLEAR</button>
+        </form>
+        <div id="shoesContainer">
+            <div id="containerContent">
+                <h2>KIDS</h2>
+                <div class="row" id="shoesRow">
+                    
+                </div>
             </div>
         </div>
-        <div class="card homePageCard" >
-            <img class="card-img-top cardImageHome" src="images/homeWomenShoes.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">WOMEN SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Jordan, Nike, Adidas, Puma...</p>
-            </div>
-        </div>
-        <div class="card homePageCard " >
-            <img class="card-img-top cardImageHome" src="images/homeKidsShoes.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">KIDS SHOES</h5>
-              <p class="card-subtitle mb-2 text-muted">Nike, Adidas, Puma, Munich...</p>
-            </div>
-        </div>
-
+        
     </section>
     <footer>
         <p>Shoey©Copyright 2021</p>
         <p>Gerard Lozano Trias</p>
     </footer>
 
+    <script>
+        document.getElementById("priceFrom").onchange = function () {
+            var input = document.getElementById("priceTo");
+            input.setAttribute("min", this.value);
+            input.removeAttribute("disabled")
+        }
+    </script>
+    
+    <script src="/shoesDictionary.js"></script>
+    <script src="/loadShoes.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
 </body>
 </html>
