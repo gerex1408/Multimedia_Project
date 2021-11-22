@@ -1,0 +1,30 @@
+/*HOME CONTENT*/
+
+#homeContent{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homePageCard{
+    border-radius: 20px;
+    border:none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 20rem;
+    margin: 30px;
+}
+.homePageCard:hover{
+    transform: rotateY(360deg);
+    transition-duration: 1500ms;
+}
+
+.card-title{
+    font-weight: bold;
+}
+.cardImageHome{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 425px;
+}

@@ -1,0 +1,51 @@
+/*CONTACT CONTENT*/
+#contactContent{
+    background-color: #EFEFEF;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contactContent h2{
+    margin-top: 30px;
+}
+#socialIcons{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#contactForm{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input{
+    width: 50%;
+    margin-top: 30px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+}
+#contactButton{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 100px;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+}
+
+/*MEDIA QUERYS*/
+
+@media (max-width: 600px){
+    #socialIcons{
+        width: 450px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .input{
+        width: 100%;
+    }
+}
