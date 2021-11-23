@@ -18,13 +18,14 @@ function getFiltersValues(){
 
 function addToCart(id){
     let size = document.getElementsByClassName("chosen");
+    let shoe = shoesArr.find(s=>s.id===id);
     if(size.length===0){
         console.log("error")
         //s'avisa i no s'afegeix al carro
     }
     else{
         size=size[0].value;
-        console.log(id,size)
+        console.log(shoe,size)
         //s'afegira a la bossa la sabata amb aquesta mida
     }
     //afegir al local storage i al carrito.
@@ -46,7 +47,7 @@ function showModal(id){
     let shoe = shoesArr.find(s=>s.id===id);
     document.getElementById("uniqueContent").innerHTML=`
     <div class="center">
-        <section class="card">
+        <section class="card" id="cardOne">
             <img id="shoe-target" class="shoes" src="../images/shoes/unique${shoe.id}.png" alt="shoe img" />
         </section>
         <section class="cardTwo">
@@ -131,7 +132,9 @@ function filterShoes(){
                                         shoe.brand==='NIKE'?`<img class="logo" src="../images/logos/nike.jpg" alt="logo"></img>`:
                                         shoe.brand==="ADIDAS"?`<img class="logo" src="../images/logos/adidas.jpg" alt="logo"></img>`:
                                         shoe.brand==="PUMA"?`<img class="logo" src="../images/logos/puma.png" alt="logo"></img>`:
-                                        shoe.brand==="JORDAN"&&`<img class="logo" src="../images/logos/jordan.jpg" alt="logo"></img>`
+                                        shoe.brand==="JORDAN"?`<img class="logo" src="../images/logos/jordan.jpg" alt="logo"></img>`:
+                                        shoe.brand==="MUNICH"?`<img class="logo" src="../images/logos/munich.jpg" alt="logo"></img>`:
+                                        shoe.brand==="CONVERSE"&&`<img class="logo" src="../images/logos/converse.jpg" alt="logo"></img>`
                                     }
                                     <h4 class="shoeName">${shoe.name}</h4>
                                 </div>

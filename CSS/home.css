@@ -28,3 +28,6 @@
     border-top-right-radius: 20px;
     height: 425px;
 }
+.cardImageHome:hover{
+    cursor: pointer;
+}
