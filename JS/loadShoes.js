@@ -27,7 +27,6 @@ function addToCart(id){
         console.log(id,size)
         //s'afegira a la bossa la sabata amb aquesta mida
     }
-    //afegir al local storage i al carrito.
 }
 
 function selectSize(id,size){
