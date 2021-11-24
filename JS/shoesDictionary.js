@@ -179,40 +179,44 @@ const womenShoes = [
 const kidsShoes = [
     {
         id:17,
-        name:"",
-        brand:"",
-        color:"",
-        sizes:[],
-        price:0,
-        style:"",
+        name:"Blazer Mid'77",
+        brand:"NIKE",
+        color:"Others",
+        sizes:[30,31,32,33,34],
+        price:84.99,
+        style:"Casual",
+        description:"These Blazers are designed to inspire dance moves for the little ones wherever they go. Do some dance moves with these soft suede mid-profile sneakers that will help you have fun and lose your fear."
     },
     {
         id:18,
-        name:"",
-        brand:"",
-        color:"",
-        sizes:[],
-        price:0,
-        style:"",
+        name:"Manoa LTR",
+        brand:"NIKE",
+        color:"Others",
+        sizes:[27,28,30,33,37],
+        price:74.99,
+        style:"Casual",
+        description:"The Nike Manoa LTR has everything you need for an adventure: leather, soft foam cushioning and a durable design. The rubber outsole with a marked traction pattern allows you to cope with the cold and humidity."
     },
     {
         id:19,
-        name:"",
-        brand:"",
-        color:"",
-        sizes:[],
-        price:0,
-        style:"",
+        name:"Runfalcon",
+        brand:"ADIDAS",
+        color:"Blue",
+        sizes:[28,32,33,34,35],
+        price:26,
+        style:"Sport",
+        description:"A versatile design for young athletes with ambitious goals. Features a wear-resistant synthetic leather and mesh upper with a side gusset that supports and stabilizes the midfoot."
 
     },
     {
         id:20,
-        name:"",
-        brand:"",
-        color:"",
-        sizes:[],
-        price:0,
-        style:"",
+        name:"X Speedflow.3",
+        brand:"ADIDAS",
+        color:"Red",
+        sizes:[27,28,29,30,31],
+        price:39,
+        style:"Sport",
+        description:"The connection between your brain, your foot and the ball is unbreakable. When mental clarity is combined with an agile body, speed reaches its highest exponent. Find your rhythm and leave your rivals behind"
 
     },
     {
@@ -220,7 +224,7 @@ const kidsShoes = [
         name:"",
         brand:"",
         color:"",
-        sizes:[],
+        sizes:[30,31,32,33,34],
         price:0,
         style:"",
 
@@ -230,7 +234,7 @@ const kidsShoes = [
         name:"",
         brand:"",
         color:"",
-        sizes:[],
+        sizes:[34,35,36,37,38],
         price:0,
         style:"",
 
@@ -240,7 +244,7 @@ const kidsShoes = [
         name:"",
         brand:"",
         color:"",
-        sizes:[],
+        sizes:[29,30,31,32,33],
         price:0,
         style:"",
 
@@ -250,7 +254,7 @@ const kidsShoes = [
         name:"",
         brand:"",
         color:"",
-        sizes:[],
+        sizes:[27,35,36,37,39],
         price:0,
         style:"",
 
