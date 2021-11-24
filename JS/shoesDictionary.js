@@ -221,42 +221,46 @@ const kidsShoes = [
     },
     {
         id:21,
-        name:"",
-        brand:"",
-        color:"",
+        name:"Cali",
+        brand:"PUMA",
+        color:"Black",
         sizes:[30,31,32,33,34],
-        price:0,
-        style:"",
+        price:49.95,
+        style:"Casual",
+        description:"We've recreated the classic California inspired by the 1980s to bring you the street-style Cali. Keeping the original style of the upper, we have added a modern rubber base, to give them a more daring and current look."
 
     },
     {
         id:22,
-        name:"",
-        brand:"",
-        color:"",
+        name:"X-Ray Lite",
+        brand:"PUMA",
+        color:"White",
         sizes:[34,35,36,37,38],
-        price:0,
-        style:"",
+        price:39.95,
+        style:"Casual",
+        description:"A new lightweight model of the X-Ray with an upper with a playful mix of prints and materials."
 
     },
     {
         id:23,
-        name:"",
-        brand:"",
-        color:"",
+        name:"MINI GOAL VCO",
+        brand:"MUNICH",
+        color:"White",
         sizes:[29,30,31,32,33],
-        price:0,
-        style:"",
+        price:47.65,
+        style:"Casual",
+        description:"The Mini Goal is the model that is inspired by retro sports details adapting them to the new generation of little warriors. Resistant and tenacious to face any battle."
 
     },
     {
         id:24,
-        name:"",
-        brand:"",
-        color:"",
+        name:"Air Jordan 11",
+        brand:"JORDAN",
+        color:"Black",
         sizes:[27,35,36,37,39],
-        price:0,
-        style:"",
+        price:75.97,
+        style:"Sport",
+        description:"The Air Jordan 11 CMFT Low offers great comfort. Inspired by classic Jordans, these low-profile sneakers feature a soft leather toe cap and mesh laces for easy lacing."
 
     },
 ]
