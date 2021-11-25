@@ -16,7 +16,7 @@ function getFiltersValues(){
     brandFilter = document.getElementById("brandSelect").value;
 }
 
-function addToCart(id){
+function submitOperation(id){
     let size = document.getElementsByClassName("chosen");
     let shoe = shoesArr.find(s=>s.id===id);
     if(size.length===0){
@@ -25,8 +25,7 @@ function addToCart(id){
     }
     else{
         size=size[0].value;
-        console.log(shoe,size)
-        //s'afegira a la bossa la sabata amb aquesta mida
+        addToCart(shoe,size)
     }
 }
 
@@ -76,7 +75,7 @@ function showModal(id){
                 </ul>
             </div>
             <div class="button-container">
-                <button class="primary" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="addToCart(${shoe.id})">Add to Cart</button>
+                <button class="primary" data-toggle="modal" data-target=".bd-example-modal-lg" onclick="submitOperation(${shoe.id})">Add to Cart</button>
             </div>
         </section>
         </div>
