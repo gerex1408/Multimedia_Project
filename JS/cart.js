@@ -1,7 +1,7 @@
-let cart= []
-let total = 0
+let cart= [] //global variable for the shopping cart
+let total = 0 //global variable for the total amount of money that cost the cart
 
-
+//adds to the cart the shoe with the size selected
 function addToCart(shoe,size){
     const cartElement = {
         shoe:shoe,
@@ -16,6 +16,7 @@ function addToCart(shoe,size){
 
 }
 
+//removes an item from the cart
 function removeFromCart(id,size){ 
 
     let elementToRemove = cart.find(e=>e.shoe.id===id && e.size===size)
@@ -30,6 +31,7 @@ function removeFromCart(id,size){
     renderCart();
 }
 
+//Fills the content of the modal alert that pop's up when the clear button is clicked
 function fillModalToClear(){
     document.getElementById("confirmModalTitle").innerHTML=`Are you sure you want to clear the cart ?`
     document.getElementById("confirmModalBody").innerHTML=`${cart.length} item/s will be removed...`
@@ -37,7 +39,7 @@ function fillModalToClear(){
     button.innerHTML=`CLEAR`
     if(button.classList.replace("btn-success","btn-danger")===false)button.classList.add("btn-danger")
 }
-
+//Fills the content of the modal alert that pop's up when the Buy button is clicked
 function fillModalToBuy(){
     document.getElementById("confirmModalTitle").innerHTML=`Do you want to complete your purchase ?`
     document.getElementById("confirmModalBody").innerHTML=`You will buy ${cart.length} item/s for ${total.toFixed(2)}€`
@@ -45,7 +47,7 @@ function fillModalToBuy(){
     button.innerHTML=`BUY`
     if(button.classList.replace("btn-danger","btn-success")===false)button.classList.add("btn-success")
 }
-
+//Deletes all the cart items
 function clearCart(){ 
     cart=[];
     window.localStorage.clear();
@@ -53,24 +55,24 @@ function clearCart(){
     setAmountToNavBar();
     renderCart();
 }
-
+//it calculates the total amount to pay
 function calculateTotal(){
     total = 0;
     for(let i of cart){
         total+=i.shoe.price;
     }
 }
-
+//it keeps the cart in the local storage so you can refresh the page and still have your shoes in the cart
 function keepInLocalStorage(){
     window.localStorage.setItem('cart',JSON.stringify(cart));
 }
-
+//it loads the cart from the local storage
 function loadCartFromLocalStorage(){
     if(window.localStorage.getItem('cart')!==null){
         cart = JSON.parse(window.localStorage.getItem('cart'))
     }
 }
-
+//it sets the amount of items in the cart and renders it in the navBar
 function setAmountToNavBar(){
     let amount = cart.length;
     const DomBadges = document.getElementsByClassName("badge")
@@ -78,7 +80,7 @@ function setAmountToNavBar(){
         badge.innerHTML=amount
     }
 }
-
+//it renders the cart items at the cart html page
 function renderCart(){
     const cartContent = document.getElementById("cartContainer");
     cartContent.innerHTML=''
@@ -115,6 +117,7 @@ function renderCart(){
     
 }
 
+//it gets all the info needed to initialize the cart element.
 function initializeCart(){
     loadCartFromLocalStorage();
     setAmountToNavBar()

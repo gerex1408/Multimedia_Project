@@ -1,3 +1,5 @@
+
+//GLOBAL VARIABLES
 var colorFilter
 var sizeFilter
 var minPrice
@@ -6,7 +8,7 @@ var styleFilter
 var brandFilter
 var shoesArr
 
-
+//It fills the filter global variables with it's current value
 function getFiltersValues(){
     colorFilter = document.getElementById("colorSelect").value;
     sizeFilter = document.getElementById("sizeSelect").value;
@@ -16,6 +18,7 @@ function getFiltersValues(){
     brandFilter = document.getElementById("brandSelect").value;
 }
 
+//It submits the decition to put the shoe in the cart and if everything is correct, the shoe is added. Else, it pop's an alert
 function submitOperation(id){
     let size = document.getElementsByClassName("chosen");
     let shoe = shoesArr.find(s=>s.id===id);
@@ -29,7 +32,7 @@ function submitOperation(id){
         addToCart(shoe,size)
     }
 }
-
+//The user selects the size of the shoe that whats to put in the cart
 function selectSize(id,size){
     let lis = document.getElementById("sizeList").children
     for(let i of lis){
@@ -41,6 +44,7 @@ function selectSize(id,size){
     li.classList.add("chosen")
 }
 
+//it creates a modal with all the shoe info.
 function showModal(id){
     
     let shoe = shoesArr.find(s=>s.id===id);
@@ -82,6 +86,7 @@ function showModal(id){
         </div>
     </div>
     `
+    //animation to make the shoe image bounce
     var bouncingShoes = anime({
         targets: '#shoe-target',
         translateY: '15',
@@ -92,7 +97,7 @@ function showModal(id){
     });
     document.getElementById("shoeModal").style.display="block"
 }
-
+//it renders the shoes of a specific section with all the filters that the user wants. 
 function filterShoes(){
     const shoesContainer = document.getElementById("shoesRow");
     shoesContainer.innerHTML=''
@@ -162,23 +167,25 @@ function filterShoes(){
         shoesContainer.innerHTML=`<p>NO SHOES MATCHING THIS FILTER</p>`
     }
 }
-
+//it gets the values of the filters and also fills the shoes array with the men shoes and displays it
 function menShoesLoad(){
     getFiltersValues()
     shoesArr=menShoes
     filterShoes()
 }
+//it gets the values of the filters and also fills the shoes array with the women shoes and displays it
 function womenShoesLoad(){
     getFiltersValues()
     shoesArr=womenShoes
     filterShoes()
 }
+//it gets the values of the filters and also fills the shoes array with the kids shoes and displays it
 function kidsShoesLoad(){
     getFiltersValues()
     shoesArr=kidsShoes
     filterShoes()
 }
-
+//it clears all the values from the filters and shows all the shoes.
 function clearFilters(shoes){
     for(let element of document.getElementsByClassName("form-control")){
         element.value='';
