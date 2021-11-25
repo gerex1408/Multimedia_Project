@@ -159,10 +159,13 @@
     align-items: center;
     max-width: none;
 }
-.modal-content{
+#uniqueContent{
     width: 60%;
     background: none;
     border: none;
+}
+#errorAlert{
+    display: none;
 }
 
 /*MEDIA QUERYS*/

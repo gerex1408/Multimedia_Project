@@ -23,7 +23,7 @@
                 <li><a href="../HTML/kidsSection.html">KIDS</a></li>
                 <li><a href="../HTML/contact.html">CONTACT US</a></li>
                 <li>
-                    <a href="#">
+                    <a href="../HTML/cart.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
                         </svg>
@@ -44,7 +44,7 @@
                     <li class="nav-item"><a class="nav-link active" href="../HTML/kidsSection.html">KIDS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="../HTML/contact.html">CONTACT US</a></li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="../HTML/cart.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
                                 <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
                             </svg>
@@ -63,14 +63,34 @@
             </section>
             <hr width="100%" color="black">
             <section id="actions">
-                <button type="button" class="btn btn-danger">CLEAR</button>
+                <button type="button" onclick="fillModalToClear()" class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">CLEAR</button>
                 <div id="info">
                     <span class="label" id="nItems"></span>
                     <span class="label" id="totalPrice"></span>
                 </div>
-                <button type="button" class="btn btn-success">BUY</button>
+                <button type="button" onclick="fillModalToBuy()" class="btn btn-success" data-toggle="modal" data-target="#confirmModal">BUY</button>
             </section>
         </section>
+
+        <div id="confirmModal" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="confirmModalTitle"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p id="confirmModalBody"></p>
+                </div>
+                <div class="modal-footer">
+                  <button onclick="clearCart()" type="button" class="btn" data-dismiss="modal" id="confirmationButton"></button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+        </div>
     </section>
     <footer>
         <p>Shoey©Copyright 2021</p>

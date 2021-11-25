@@ -20,8 +20,9 @@ function submitOperation(id){
     let size = document.getElementsByClassName("chosen");
     let shoe = shoesArr.find(s=>s.id===id);
     if(size.length===0){
-        console.log("error")
-        //s'avisa i no s'afegeix al carro
+        document.getElementById("errorAlert").style.display="block"
+        setTimeout(function(){ document.getElementById("errorAlert").style.display="none" }, 3000);
+        
     }
     else{
         size=size[0].value;

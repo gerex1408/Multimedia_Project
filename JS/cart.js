@@ -2,18 +2,56 @@ let cart= []
 let total = 0
 
 
-async function addToCart(shoe,size){
+function addToCart(shoe,size){
     const cartElement = {
         shoe:shoe,
         size:size,
         n:1
     }
-    cart.push(cartElement) //add the shoe element to the cart.
+    cart.push(cartElement)
 
-    calculateTotal() //Calculate the total amount of money
-    keepInLocalStorage(); //update LocalStorage
-    setAmountToNavBar() //update navBar
+    calculateTotal()
+    keepInLocalStorage();
+    setAmountToNavBar() 
 
+}
+
+function removeFromCart(id,size){ 
+
+    let elementToRemove = cart.find(e=>e.shoe.id===id && e.size===size)
+    let index = cart.indexOf(elementToRemove);
+    console.log(index)
+    if (index > -1) {
+        cart.splice(index, 1);
+    }
+    calculateTotal();
+    keepInLocalStorage();
+    setAmountToNavBar();
+    renderCart();
+}
+
+function fillModalToClear(){
+    document.getElementById("confirmModalTitle").innerHTML=`Are you sure you want to clear the cart ?`
+    document.getElementById("confirmModalBody").innerHTML=`${cart.length} item/s will be removed...`
+    let button = document.getElementById("confirmationButton")
+    button.innerHTML=`CLEAR`
+    if(button.classList.replace("btn-success","btn-danger")===false)button.classList.add("btn-danger")
+}
+
+function fillModalToBuy(){
+    document.getElementById("confirmModalTitle").innerHTML=`Do you want to complete your purchase ?`
+    document.getElementById("confirmModalBody").innerHTML=`You will buy ${cart.length} item/s for ${total.toFixed(2)}€`
+    let button = document.getElementById("confirmationButton")
+    button.innerHTML=`BUY`
+    if(button.classList.replace("btn-danger","btn-success")===false)button.classList.add("btn-success")
+}
+
+function clearCart(){ 
+    cart=[];
+    window.localStorage.clear();
+    calculateTotal();
+    setAmountToNavBar();
+    renderCart();
 }
 
 function calculateTotal(){
@@ -21,7 +59,6 @@ function calculateTotal(){
     for(let i of cart){
         total+=i.shoe.price;
     }
-    console.log(total);
 }
 
 function keepInLocalStorage(){
@@ -52,15 +89,16 @@ function renderCart(){
         }
     }
     for(let element of cartWithoutDuplicateds){
-        element.n=cart.filter(e=>e.shoe.id===element.shoe.id && e.size==element.size).length
+        let n=cart.filter(e=>e.shoe.id===element.shoe.id && e.size==element.size).length
         cartContent.innerHTML+=`
         <div class="card">
-            <img class="productImage" src="../images/shoes/unique${element.shoe.id}.png" alt="Card image cap">
+            <img class="productImage" src="../images/shoes/shoe${element.shoe.id}.jpg" alt="Card image cap">
             <div class="card-body">
                 <h3 class="shoeName">${element.shoe.name}</h3>
-                <h5><span class="label">Size: </span>${element.size} <span class="label">Amount: </span>${element.n}  <span class="label">Price: </span>${element.shoe.price}€ ${element.n>1?`x ${element.n}`:''}</h5>
+                <h5><span class="label">Size: </span>${element.size} <span class="label">Amount: </span>${n}  <span class="label">Price: </span>${element.shoe.price}€ ${n>1?`x ${n}`:''}</h5>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ff4040" style="margin-right:10px" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <svg id="trash" onclick="removeFromCart(${element.shoe.id},${element.size})" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#ff4040" style="margin-right:10px" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                <title>Remove Item</title>
                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
             </svg>
         </div>
@@ -68,7 +106,7 @@ function renderCart(){
     }
     if(cart.length>0){
         document.getElementById("nItems").innerHTML=`Items: ${cart.length}`
-        document.getElementById("totalPrice").innerHTML=`Total: ${total}€`
+        document.getElementById("totalPrice").innerHTML=`Total: ${total.toFixed(2)}€`
     }
     else{
         document.getElementById('actions').innerHTML=''

@@ -49,6 +49,7 @@ button{
     align-items: center;
     border-radius: 10px;
     margin-top: 20px;
+    min-height: 150px;
 }
 .card-body h5 span,.card-body h3{
     margin-left: 20px;
@@ -59,6 +60,13 @@ button{
 }
 .shoeName{
     font-weight: bold;
+}
+
+.modal{
+    display: none;
+}
+#trash:hover{
+    cursor: pointer;
 }
 
 @media (max-width: 600px){
