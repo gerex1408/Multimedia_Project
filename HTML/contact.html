@@ -58,35 +58,26 @@
     <section id="contactContent">
         <h2>CONTACT US</h2>
         <div id="socialIcons">
-            <a href="#"><img src="https://img.icons8.com/color/77/000000/facebook.png"/></a>
-            <a href="#"><img src="https://img.icons8.com/color/77/000000/twitter-squared.png"/></a>
-            <a href="#"><img src="https://img.icons8.com/fluency/77/000000/instagram-new.png"/></a>
-            <a href="#"><img src="https://img.icons8.com/color/77/000000/linkedin.png"/></a>
+            <a href="https://es-la.facebook.com/jumpman23/" target="_blanck"><img src="https://img.icons8.com/color/77/000000/facebook.png"/></a>
+            <a href="https://twitter.com/Nike?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blanck"><img src="https://img.icons8.com/color/77/000000/twitter-squared.png"/></a>
+            <a href="https://www.instagram.com/lozaniki_/" target="_blanck"><img src="https://img.icons8.com/fluency/77/000000/instagram-new.png"/></a>
+            <a href="https://www.linkedin.com/in/gerardlozanotrias/" target="_blanck"><img src="https://img.icons8.com/color/77/000000/linkedin.png"/></a>
         </div>
         <hr width="70%" color="black">
         <div id="contactForm">
-            <input type="text" class="form-control input" placeholder="E-MAIL">
+            <input id="emailInput"type="email" class="form-control input" placeholder="E-MAIL">
             <textarea class="form-control input" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"></textarea>
-            <button id="contactButton" type="button" class="btn btn-success" onclick="showAlert()">SEND</button>
-            <div id="sentAlert" style="display: none;" class="alert alert-success" role="alert">
-                Your message has been sent successfuly !
-            </div>
+            <button id="contactButton" type="button" class="btn btn-success" onclick="sendMessage()">SEND</button>
+            <div id="sentAlert" style="display: none;" class="alert" role="alert"></div>
         </div>
     </section>
     <footer>
         <p>Shoey©Copyright 2021</p>
         <p>Gerard Lozano Trias</p>
     </footer>
-
-    <script>
-        function showAlert(){
-            document.getElementById('sentAlert').style.display='block';
-            setTimeout(function(){location.reload()},2000)
-            
-        }
-    </script>
     
     <script src="../JS/cart.js"></script>
+    <script src="../JS/contact.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
